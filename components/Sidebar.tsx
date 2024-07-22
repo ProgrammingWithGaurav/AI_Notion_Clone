@@ -8,8 +8,12 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { MenuIcon } from "lucide-react";
+import { useCollection } from "react-firebase-hooks/firestore";
+import { useUser } from "@clerk/nextjs";
 
 export default function Sidebar() {
+  const { user } = useUser();
+  const { data, leading, error } = useCollection();
   const menuOptions = (
     <>
       <NewDocumentButton />
