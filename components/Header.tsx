@@ -8,6 +8,7 @@ import {
 } from "@clerk/clerk-react";
 import { useUser } from "@clerk/nextjs";
 import React from "react";
+import Breadcrumbs from "./Breadcrumbs";
 
 export default function Header() {
   const { user } = useUser();
@@ -19,7 +20,7 @@ export default function Header() {
           {"'s"} Space
         </h1>
       )}
-
+      <Breadcrumbs />
       <div>
         <SignedOut>
           <SignInButton />
